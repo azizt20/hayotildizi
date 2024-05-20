@@ -37,6 +37,9 @@ const classes = computed(() => {
     props.size === "xs"
       ? "!text-[8px] leading-[10.36px] !py-1.5 !px-3 lg:leading-1 lg:!text-base lg:!px-7 lg:!py-3"
       : "",
+      props.size === "lg"
+      ? "lg:leading-1 lg:!text-base lg:!px-7 lg:!py-3"
+      : "",
     "inline-flex items-center justify-center text-sm 3xl:text-base px-3 py-1.5 3xl:px-7 3xl:py-3 font-semibold rounded-md transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-success",
   ];
 });

@@ -107,7 +107,7 @@
           </Listbox>
         </div>
         <div class="mt-4 lg:mt-10">
-          <btn full @click.stop="save" :disabled="loading">{{
+          <btn full size="lg" @click.stop="save" :disabled="loading">{{
             $t("get-consultation")
           }}</btn>
         </div>
