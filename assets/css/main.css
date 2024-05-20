@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container {
+  @apply mx-auto px-[18px];
+}
+
+@media screen and (min-width: 320px) {
+  .container {
+    width: 100% !important;
+  }
+  .review-swiper {
+    width: calc(100vw - 18px);
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .container {
+    width: 100% !important;
+  }
+  .review-swiper {
+    width: calc(100vw - 18px);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 600px !important;
+  }
+  .review-swiper {
+    width: calc(100vw - ((100vw - 600px) / 2));
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    width: 800px !important;
+  }
+  .review-swiper {
+    width: calc(100vw - ((100vw - 800px) / 2));
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    width: 1000px !important;
+  }
+  .review-swiper {
+    width: calc(100vw - ((100vw - 1000px) / 2));
+  }
+}
+
+@media screen and (min-width: 1536px) {
+  .container {
+    width: 1200px !important;
+  }
+  .review-swiper {
+    width: calc(100vw - ((100vw - 1200px) / 2));
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .container {
+    width: 1400px !important;
+  }
+  .review-swiper {
+    width: calc(100vw - ((100vw - 1400px) / 2));
+  }
+}
+
+@media screen and (min-width: 2500px) {
+  .container {
+    width: 1920px !important;
+  }
+  .review-swiper {
+    width: calc(100vw - ((100vw - 1920px) / 2));
+  }
+}
+
+@font-face {
+  font-family: RFDewiExpanded;
+  font-weight: 100;
+  src: url(~/assets/fonts/RFDewiExpanded-Thin.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: RFDewiExpanded;
+  font-weight: 200;
+  src: url(~/assets/fonts/RFDewiExpanded-Ultralight.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: RFDewiExpanded;
+  font-weight: 300;
+  src: url(~/assets/fonts/RFDewiExpanded-Light.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: RFDewiExpanded;
+  font-weight: 400;
+  src: url(~/assets/fonts/RFDewiExpanded-Regular.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: RFDewiExpanded;
+  font-weight: 500;
+  src: url(~/assets/fonts/RFDewiExpanded-Regular.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: RFDewiExpanded;
+  font-weight: 600;
+  src: url(~/assets/fonts/RFDewiExpanded-Semibold.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: RFDewiExpanded;
+  font-weight: 700;
+  src: url(~/assets/fonts/RFDewiExpanded-Bold.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: RFDewiExpanded;
+  font-weight: 800;
+  src: url(~/assets/fonts/RFDewiExpanded-Ultrabold.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: RFDewiExpanded;
+  font-weight: 900;
+  src: url(~/assets/fonts/RFDewiExpanded-Black.woff2) format("woff2");
+}
+
+* {
+  font-family: RFDewiExpanded, sans-serif;
+}
+
+.banner-swiper > .swiper-pagination {
+  position: static;
+  --swiper-pagination-color: #29a624;
+  margin-left: 50%;
+  margin-top: 12px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.revert-tailwind {
+  all: initial;
+}
+
+.revert-tailwind > * {
+  all: revert;
+  font-family: RFDewiExpanded, sans-serif;
+}
+
+.iti {
+  --iti-path-flags-1x: url('/images/intl/flags.png');
+  --iti-path-flags-2x: url('/images/intl/flags@2x.png');
+  --iti-path-globe-1x: url('/images/intl/globe.png');
+  --iti-path-globe-2x: url('/images/intl/globe@2x.png');
+  width: 100%;
+}
