@@ -98,10 +98,10 @@
           </div>
         </div>
         <div class="mt-6 lg:mt-16 flex items-center space-x-6">
-          <btn :to="localePath(`/products/${products[0].id}`)">{{
+          <btn size="lg" width="w-[190px]" :to="localePath(`/products/${products[0].id}`)">{{
             $t("buy")
           }}</btn>
-          <btn :to="localePath(`/products/${products[0].id}`)" outline>{{
+          <btn size="lg" width="w-[190px]" :to="localePath(`/products/${products[0].id}`)" outline>{{
             $t("more")
           }}</btn>
         </div>
@@ -262,10 +262,10 @@
           </div>
         </div>
         <div class="mt-6 lg:mt-16 flex items-center space-x-6">
-          <btn :to="localePath(`/products/${products[1].id}`)">{{
+          <btn size="lg" width="w-[190px]" :to="localePath(`/products/${products[1].id}`)">{{
             $t("buy")
           }}</btn>
-          <btn :to="localePath(`/products/${products[1].id}`)" outline>{{
+          <btn size="lg" width="w-[190px]" :to="localePath(`/products/${products[1].id}`)" outline>{{
             $t("more")
           }}</btn>
         </div>
@@ -298,7 +298,7 @@
       <blog-card v-for="blog in blogs" :key="blog.id" :blog="blog" />
     </div>
     <div class="w-full flex justify-center mt-6 lg:mt-16">
-      <btn :to="localePath('blogs')" outline>{{ $t("show-all") }}</btn>
+      <btn size="lg" :to="localePath('blogs')" outline>{{ $t("show-all") }}</btn>
     </div>
   </section>
   <section class="w-full overflow-x-hidden mt-10" id="reviews">
