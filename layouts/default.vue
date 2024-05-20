@@ -18,7 +18,7 @@
             <!-- Current: "border-indigo-500 text-gray-900", Default: "text-[#262626] font-semibold hover:border-gray-300 hover:text-gray-700" -->
             <nuxt-link
               :to="`/${locale}`"
-              class="inline-flex items-center border-b px-1 pt-1 pb-2 font-semibold"
+              class="lg:text-sm 3xl:text-base inline-flex items-center border-b px-1 pt-1 pb-2 font-semibold"
               :class="
                 $route.fullPath === '/ru' || $route.fullPath === '/uz'
                   ? 'border-[#03A64A] text-primary'
@@ -29,7 +29,7 @@
             </nuxt-link>
             <nuxt-link
               :to="`/${locale}#achievements`"
-              class="inline-flex items-center border-b px-1 pt-1 pb-2 font-semibold"
+              class="lg:text-sm 3xl:text-base inline-flex items-center border-b px-1 pt-1 pb-2 font-semibold"
               :class="
                 $route.fullPath.includes('#achievements')
                   ? 'border-[#03A64A] text-primary'
@@ -39,7 +39,7 @@
             </nuxt-link>
             <nuxt-link
               :to="`/${locale}#illnesses`"
-              class="inline-flex items-center border-b px-1 pt-1 pb-2 font-semibold"
+              class="lg:text-sm 3xl:text-base inline-flex items-center border-b px-1 pt-1 pb-2 font-semibold"
               :class="
                 $route.fullPath.includes('#illnesses')
                   ? 'border-[#03A64A] text-primary'
@@ -50,7 +50,7 @@
             </nuxt-link>
             <nuxt-link
               :to="`/${locale}#reviews`"
-              class="inline-flex items-center border-b px-1 pt-1 pb-2 font-semibold"
+              class="lg:text-sm 3xl:text-base inline-flex items-center border-b px-1 pt-1 pb-2 font-semibold"
               :class="
                 $route.fullPath.includes('#reviews')
                   ? 'border-[#03A64A] text-primary'
@@ -61,7 +61,7 @@
             </nuxt-link>
             <nuxt-link
               :to="`/${locale}#certificates`"
-              class="inline-flex items-center border-b px-1 pt-1 pb-2 font-semibold"
+              class="lg:text-sm 3xl:text-base inline-flex items-center border-b px-1 pt-1 pb-2 font-semibold"
               :class="
                 $route.fullPath.includes('#certificates')
                   ? 'border-[#03A64A] text-primary'
@@ -76,15 +76,15 @@
           <Menu as="div" class="relative text-left">
             <div>
               <MenuButton
-                class="inline-flex w-full justify-center rounded-sm ring-1 ring-[#E1E1E1] bg-[#F4F4F4] px-4 py-2 text-sm font-medium text-primary hover:bg-[#e5e5e5] focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75"
+                class="inline-flex w-full justify-center rounded-sm ring-1 ring-[#E1E1E1] bg-[#F4F4F4] px-2 py-1 3xl:px-4 3xl:py-2 text-sm font-medium text-primary hover:bg-[#e5e5e5] focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75"
               >
                 <div class="flex items-center space-x-1">
                   <img
                     :src="`https://hatscripts.github.io/circle-flags/flags/${locale}.svg`"
                     class="rounded-full size-4"
                   />
-                  <span v-if="locale == 'uz'">O'zb</span>
-                  <span v-else-if="locale == 'ru'">Рус</span>
+                  <span class="text-sm 3xl:text-base" v-if="locale == 'uz'">O'zb</span>
+                  <span class="text-sm 3xl:text-base" v-else-if="locale == 'ru'">Рус</span>
                 </div>
                 <ChevronDownIcon
                   class="-mr-1 ml-2 h-5 w-5 text-primary"
