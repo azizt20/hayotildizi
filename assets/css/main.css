@@ -36,11 +36,14 @@
 
 @media screen and (min-width: 1024px) {
   .container {
-    width: 800px !important;
+    width: 1000px !important;
     padding: 0;
   }
   .review-swiper {
     width: calc(100vw - ((100vw - 800px) / 2));
+  }
+  .main {
+    min-height: calc(100vh - 261px);
   }
 }
 
@@ -71,6 +74,9 @@
   }
   .review-swiper {
     width: calc(100vw - ((100vw - 1400px) / 2));
+  }
+  .main {
+    min-height: calc(100vh - 238px);
   }
 }
 

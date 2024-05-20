@@ -8,13 +8,13 @@
           <div class="flex flex-shrink-0 items-center">
             <nuxt-link :to="`/${locale}`">
               <img
-                class="h-[26px] lg:h-10 w-auto"
+                class="h-[26px] lg:h-8 3xl:h-10 w-auto"
                 src="~/assets/images/logo.svg"
                 alt="Hayot Ildizi"
               />
             </nuxt-link>
           </div>
-          <div class="hidden lg:ml-16 lg:flex lg:space-x-8 items-center">
+          <div class="hidden lg:ml-8 2xl:ml-16 lg:flex 2xl:space-x-8 items-center">
             <!-- Current: "border-indigo-500 text-gray-900", Default: "text-[#262626] font-semibold hover:border-gray-300 hover:text-gray-700" -->
             <nuxt-link
               :to="`/${locale}`"
@@ -334,19 +334,19 @@
     </Dialog>
   </nav>
   <div
-    class="pt-[54px] lg:pt-[94px] lg:pb-[100px] pb-3"
+    class="pt-[54px] lg:pt-[94px] lg:pb-[100px] pb-3 main"
     :class="$route.name.startsWith('index__') ? 'bg-[#FAFDF2]' : 'bg-white'"
   >
     <slot />
   </div>
-  <footer class="bg-primary" aria-labelledby="footer-heading">
+  <footer class="bg-primary pt-6 pb-3" aria-labelledby="footer-heading">
     <h2 id="footer-heading" class="sr-only">Footer</h2>
-    <div class="container pt-6 pb-3">
-      <div class="lg:grid lg:grid-cols-8 lg:gap-8">
+    <div class="container">
+      <div class="2xl:grid 2xl:grid-cols-8 lg:gap-8">
         <div class="xl:col-span-4">
           <img
-            class="h-8 lg:h-12"
-            src="~/assets/images/footer-logo.png"
+            class="h-8 lg:h-12 text-white"
+            src="~/assets/images/footer-logo.svg"
             alt="Hayot Ildizi"
           />
           <p class="text-white/50 font-light mt-3 text-sm lg:text-base">
@@ -370,7 +370,7 @@
             <div class="lg:text-left">
               <nuxt-link
                 :to="`/${locale}#achievements`"
-                class="lg:text-lg text-[#F7F8FB] font-bold"
+                class="text-sm 3xl:text-lg text-[#F7F8FB] font-bold"
               >
                 {{ $t("about") }}
               </nuxt-link>
@@ -378,7 +378,7 @@
             <div class="lg:text-center">
               <nuxt-link
                 :to="`/${locale}#illnesses`"
-                class="lg:text-lg text-[#F7F8FB] font-bold"
+                class="text-sm 3xl:text-lg text-[#F7F8FB] font-bold"
               >
                 {{ $t("illnesses") }}
               </nuxt-link>
@@ -386,7 +386,7 @@
             <div class="lg:text-center">
               <nuxt-link
                 :to="`/${locale}#reviews`"
-                class="lg:text-lg text-[#F7F8FB] font-bold"
+                class="text-sm 3xl:text-lg text-[#F7F8FB] font-bold"
               >
                 {{ $t("reviews") }}
               </nuxt-link>
@@ -394,7 +394,7 @@
             <div class="lg:text-right">
               <nuxt-link
                 :to="`/${locale}#certificates`"
-                class="lg:text-lg text-[#F7F8FB] font-bold"
+                class="text-sm 3xl:text-lg text-[#F7F8FB] font-bold"
               >
                 {{ $t("certificates") }}
               </nuxt-link>
