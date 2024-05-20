@@ -6,14 +6,16 @@
       class="banner-swiper"
       :pagination="{ clickable: true, dynamicBullets: true }"
     >
-      <swiper-slide v-for="banner in banners" :key="banner.id" class="relative">
-        <img :src="banner.image" alt="banner" class="w-full" />
+      <swiper-slide v-for="banner in banners" :key="banner.id" class="relative aspect-[339/133] lg:aspect-[48/11] bg-center bg-cover bg-no-repeat rounded-[9px] lg:rounded-[13px]" :style="`background-image: url(${banner.image})`">
+        <img :src="banner.products_image" alt="products" class="w-[55%] lg:w-[45%] absolute right-[9px] lg:right-10 bottom-[11px] lg:bottom-[34px]" />
+        <img src="~/assets/images/certificates.png" alt="banner" class="absolute lg:left-1/2 top-[9px] right-[17px] lg:right-auto lg:top-5 lg:-translate-x-1/2 w-[100px] lg:w-auto" />
+        <img src="~/assets/images/logo.svg" alt="logo" class="absolute left-[17px] lg:left-[6.7%] top-3 lg:top-9 w-[110px] lg:w-[270px]" />
         <p
-          class="absolute left-[6.7%] top-[45%] max-w-[140px] lg:max-w-[340px] font-light text-xs lg:text-[21px]"
+          class="absolute left-[17px] lg:left-[6.7%] top-1/3 lg:top-[40%] max-w-[137px] lg:max-w-[340px] font-light text-xs lg:text-[21px] lg:leading-[31.18px]"
         >
           {{ banner.title }}
         </p>
-        <div class="absolute left-[6.7%] bottom-[12%]">
+        <div class="absolute left-[17px] lg:left-[6.7%] bottom-[10%]">
           <btn :to="banner.button_link" size="xs">
             {{ banner.button_text }}
           </btn>

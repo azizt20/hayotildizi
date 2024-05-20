@@ -27,6 +27,7 @@
 @media screen and (min-width: 768px) {
   .container {
     width: 600px !important;
+    padding: 0;
   }
   .review-swiper {
     width: calc(100vw - ((100vw - 600px) / 2));
@@ -36,6 +37,7 @@
 @media screen and (min-width: 1024px) {
   .container {
     width: 800px !important;
+    padding: 0;
   }
   .review-swiper {
     width: calc(100vw - ((100vw - 800px) / 2));
@@ -45,6 +47,7 @@
 @media screen and (min-width: 1280px) {
   .container {
     width: 1000px !important;
+    padding: 0;
   }
   .review-swiper {
     width: calc(100vw - ((100vw - 1000px) / 2));
@@ -54,6 +57,7 @@
 @media screen and (min-width: 1536px) {
   .container {
     width: 1200px !important;
+    padding: 0;
   }
   .review-swiper {
     width: calc(100vw - ((100vw - 1200px) / 2));
@@ -63,6 +67,7 @@
 @media screen and (min-width: 1920px) {
   .container {
     width: 1400px !important;
+    padding: 0;
   }
   .review-swiper {
     width: calc(100vw - ((100vw - 1400px) / 2));
@@ -72,6 +77,7 @@
 @media screen and (min-width: 2500px) {
   .container {
     width: 1920px !important;
+    padding: 0;
   }
   .review-swiper {
     width: calc(100vw - ((100vw - 1920px) / 2));
