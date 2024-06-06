@@ -14,7 +14,9 @@
               />
             </nuxt-link>
           </div>
-          <div class="hidden lg:ml-8 2xl:ml-16 lg:flex 2xl:space-x-8 items-center">
+          <div
+            class="hidden lg:ml-8 2xl:ml-16 lg:flex 2xl:space-x-8 items-center"
+          >
             <!-- Current: "border-indigo-500 text-gray-900", Default: "text-[#262626] font-semibold hover:border-gray-300 hover:text-gray-700" -->
             <nuxt-link
               :to="`/${locale}`"
@@ -80,11 +82,12 @@
               >
                 <div class="flex items-center space-x-1">
                   <img
-                    :src="`https://hatscripts.github.io/circle-flags/flags/${locale}.svg`"
+                    :src="`https://hatscripts.github.io/circle-flags/flags/${activeLocale.alpha2}.svg`"
                     class="rounded-full size-4"
                   />
-                  <span class="text-sm 3xl:text-base" v-if="locale == 'uz'">O'zb</span>
-                  <span class="text-sm 3xl:text-base" v-else-if="locale == 'ru'">Рус</span>
+                  <span class="text-sm 3xl:text-base">
+                    {{ activeLocale.short }}
+                  </span>
                 </div>
                 <ChevronDownIcon
                   class="-mr-1 ml-2 h-5 w-5 text-primary"
@@ -105,34 +108,27 @@
                 class="absolute right-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-none z-10"
               >
                 <div class="px-1 py-1">
-                  <MenuItem v-slot="{ active }">
+                  <MenuItem
+                    v-slot="{ active }"
+                    v-for="lang in locales"
+                    :key="lang.code"
+                  >
                     <button
                       :class="[
-                        active ? 'bg-success/30 text-white' : 'text-primary',
+                        lang.code == locale
+                          ? 'bg-success/30 text-white'
+                          : 'text-primary hover:bg-success/10 transition',
                         'group flex w-full items-center rounded-md px-2 py-2 text-sm',
                       ]"
-                      @click="setLocale('uz')"
+                      @click="setLocale(lang.code)"
                     >
                       <img
-                        src="https://hatscripts.github.io/circle-flags/flags/uz.svg"
+                        :src="`https://hatscripts.github.io/circle-flags/flags/${lang.alpha2}.svg`"
                         class="rounded-full size-4"
                       />
-                      <span class="ml-2">O'zbekcha</span>
-                    </button>
-                  </MenuItem>
-                  <MenuItem v-slot="{ active }">
-                    <button
-                      :class="[
-                        active ? 'bg-success/30 text-white' : 'text-primary',
-                        'group flex w-full items-center rounded-md px-2 py-2 text-sm',
-                      ]"
-                      @click="setLocale('ru')"
-                    >
-                      <img
-                        src="https://hatscripts.github.io/circle-flags/flags/ru.svg"
-                        class="rounded-full size-4"
-                      />
-                      <span class="ml-2">Русский</span>
+                      <span class="ml-2">
+                        {{ lang.name }}
+                      </span>
                     </button>
                   </MenuItem>
                 </div>
@@ -292,41 +288,36 @@
                 class="absolute right-0 mt-2 w-full top-0 -translate-y-[115%] origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-none z-10"
               >
                 <div class="px-1 py-1">
-                  <MenuItem v-slot="{ active }">
+                  <MenuItem
+                    v-slot="{ active }"
+                    v-for="lang in locales"
+                    :key="lang.code"
+                  >
                     <button
                       :class="[
-                        active ? 'bg-success/30 text-white' : 'text-primary',
+                        lang.code === locale ? 'bg-success/30 text-white' : 'text-primary hover:bg-success/10 transition',
                         'group flex w-full items-center rounded-md px-2 py-2 text-sm',
                       ]"
-                      @click="setLocale('uz')"
+                      @click="setLocale(lang.code)"
                     >
                       <img
-                        src="https://hatscripts.github.io/circle-flags/flags/uz.svg"
+                        :src="`https://hatscripts.github.io/circle-flags/flags/${lang.alpha2}.svg`"
                         class="rounded-full size-4"
                       />
-                      <span class="ml-2">O'zbekcha</span>
-                    </button>
-                  </MenuItem>
-                  <MenuItem v-slot="{ active }">
-                    <button
-                      :class="[
-                        active ? 'bg-success/30 text-white' : 'text-primary',
-                        'group flex w-full items-center rounded-md px-2 py-2 text-sm',
-                      ]"
-                      @click="setLocale('ru')"
-                    >
-                      <img
-                        src="https://hatscripts.github.io/circle-flags/flags/ru.svg"
-                        class="rounded-full size-4"
-                      />
-                      <span class="ml-2">Русский</span>
+                      <span class="ml-2">
+                        {{ lang.name }}
+                      </span>
                     </button>
                   </MenuItem>
                 </div>
               </MenuItems>
             </transition>
           </Menu>
-          <btn full :to="`/${locale}#contact-us`" @click="mobileMenuOpen = false">
+          <btn
+            full
+            :to="`/${locale}#contact-us`"
+            @click="mobileMenuOpen = false"
+          >
             {{ $t("contact-us") }}
           </btn>
         </div>
@@ -465,7 +456,7 @@ import {
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/vue/20/solid";
 import { XMarkIcon } from "@heroicons/vue/24/outline";
 
-const { locale, locales, setLocale } = useI18n();
+const { locale, setLocale } = useI18n();
 const mobileMenuOpen = ref(false);
 const route = useRoute();
 watch(
@@ -474,4 +465,16 @@ watch(
     mobileMenuOpen.value = false;
   }
 );
+const locales = [
+  { name: "O'zbekcha", code: "uz", alpha2: "uz", short: "O'zb" },
+  { name: "Русский", code: "ru", alpha2: "ru", short: "Рус" },
+  { name: "Қазақша", code: "kk", alpha2: "kz", short: "Қаз" },
+  { name: "Кыргызча", code: "ky", alpha2: "kg", short: "Кыр" },
+  { name: "Тоҷикӣ", code: "tg", alpha2: "tj", short: "Тоҷ" },
+  { name: "Түркмәнчә", code: "tk", alpha2: "tm", short: "Түр" },
+];
+
+const activeLocale = computed(() => {
+  return locales.find((l) => l.code === locale.value);
+});
 </script>

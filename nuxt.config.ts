@@ -26,6 +26,10 @@ export default defineNuxtConfig({
     locales: [
       { code: "ru", iso: "ru-RU", file: "ru.json" },
       { code: "uz", iso: "uz-UZ", file: "uz.json" },
+      { code: "kk", iso: "kk-KZ", file: "kk.json" },
+      { code: "ky", iso: "ky-KG", file: "ky.json" },
+      { code: "tk", iso: "tk-TM", file: "tk.json" },
+      { code: "tg", iso: "tg-TJ", file: "tg.json" },
     ],
   }
 })

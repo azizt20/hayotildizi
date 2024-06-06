@@ -98,21 +98,36 @@
           </div>
         </div>
         <div class="mt-6 lg:mt-16 flex items-center space-x-6">
-          <btn size="lg" width="w-[190px]" :to="localePath(`/products/${products[0].id}`)">{{
-            $t("buy")
-          }}</btn>
-          <btn size="lg" width="w-[190px]" :to="localePath(`/products/${products[0].id}`)" outline>{{
-            $t("more")
-          }}</btn>
+          <btn
+            size="lg"
+            width="w-[190px]"
+            :to="localePath(`/products/${products[0].id}`)"
+            >{{ $t("buy") }}</btn
+          >
+          <btn
+            size="lg"
+            width="w-[190px]"
+            :to="localePath(`/products/${products[0].id}`)"
+            outline
+            >{{ $t("more") }}</btn
+          >
         </div>
       </div>
-      <div class="lg:ml-10 w-full relative lg:w-auto">
+      <div
+        class="lg:ml-10 w-full relative lg:w-auto sm:flex sm:justify-center sm:items-center"
+      >
         <div
           class="border-2 border-success/10 aspect-square h-[266px] lg:h-[448px] rounded-full flex items-center justify-center relative float-right"
         >
           <div
             class="bg-success/10 rounded-full aspect-square h-[224px] lg:h-[376px]"
-          ></div>
+          >
+            <img
+              class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 max-h-[312px] lg:max-h-[525px]"
+              :src="products[0].image"
+              :alt="products[0].title"
+            />
+          </div>
           <div
             class="absolute left-[7%] top-1/4 vitamin flex items-center space-x-2"
           >
@@ -156,11 +171,6 @@
             </div>
           </div>
         </div>
-        <img
-          class="absolute left-1/2 top-1/2 -translate-x-1/3 lg:-translate-x-1/2 -translate-y-1/2 max-h-[312px] lg:max-h-[525px]"
-          :src="products[0].image"
-          :alt="products[0].title"
-        />
       </div>
     </div>
   </section>
@@ -169,13 +179,21 @@
     v-if="products?.length && products.length > 1"
   >
     <div class="flex lg:justify-between flex-col lg:flex-row">
-      <div class="w-full relative lg:w-1/2">
+      <div
+        class="w-full relative lg:w-1/2 sm:flex sm:justify-center sm:items-center"
+      >
         <div
           class="border-2 border-success/10 aspect-square h-[266px] lg:h-[448px] rounded-full flex items-center justify-center relative float-right"
         >
           <div
             class="bg-success/10 rounded-full aspect-square h-[224px] lg:h-[376px]"
-          ></div>
+          >
+            <img
+              class="absolute left-1/2 top-1/2 -translate-x-[35%] -translate-y-1/2 max-h-[312px] lg:max-h-[525px]"
+              :src="products[1].image"
+              :alt="products[1].title"
+            />
+          </div>
           <div
             class="absolute left-[7%] top-1/4 vitamin flex items-center space-x-2"
           >
@@ -219,13 +237,8 @@
             </div>
           </div>
         </div>
-        <img
-          class="absolute left-1/2 top-1/2 -translate-x-[14%] lg:-translate-x-[45%] xl:-translate-x-[30%] 2xl:-translate-x-[17.5%] 3xl:-translate-x-[0%] 4xl:translate-x-[40%] -translate-y-1/2 max-h-[312px] lg:max-h-[525px]"
-          :src="products[1].image"
-          :alt="products[1].title"
-        />
       </div>
-      <div class="w-full lg:w-1/2 lg:ml-10">
+      <div class="w-full px-2 sm:px-0 lg:w-1/2 lg:ml-10">
         <p
           class="text-light text-xs lg:text-[19px] leading-1 lg:leading-[22.8px] text-[#464646]"
         >
@@ -262,12 +275,19 @@
           </div>
         </div>
         <div class="mt-6 lg:mt-16 flex items-center space-x-6">
-          <btn size="lg" width="w-[190px]" :to="localePath(`/products/${products[1].id}`)">{{
-            $t("buy")
-          }}</btn>
-          <btn size="lg" width="w-[190px]" :to="localePath(`/products/${products[1].id}`)" outline>{{
-            $t("more")
-          }}</btn>
+          <btn
+            size="lg"
+            width="w-[190px]"
+            :to="localePath(`/products/${products[1].id}`)"
+            >{{ $t("buy") }}</btn
+          >
+          <btn
+            size="lg"
+            width="w-[190px]"
+            :to="localePath(`/products/${products[1].id}`)"
+            outline
+            >{{ $t("more") }}</btn
+          >
         </div>
       </div>
     </div>
@@ -298,7 +318,9 @@
       <blog-card v-for="blog in blogs" :key="blog.id" :blog="blog" />
     </div>
     <div class="w-full flex justify-center mt-6 lg:mt-16">
-      <btn size="lg" :to="localePath('blogs')" outline>{{ $t("show-all") }}</btn>
+      <btn size="lg" :to="localePath('blogs')" outline>{{
+        $t("show-all")
+      }}</btn>
     </div>
   </section>
   <section class="w-full overflow-x-hidden mt-10" id="reviews">
