@@ -295,7 +295,9 @@
                   >
                     <button
                       :class="[
-                        lang.code === locale ? 'bg-success/30 text-white' : 'text-primary hover:bg-success/10 transition',
+                        lang.code === locale
+                          ? 'bg-success/30 text-white'
+                          : 'text-primary hover:bg-success/10 transition',
                         'group flex w-full items-center rounded-md px-2 py-2 text-sm',
                       ]"
                       @click="setLocale(lang.code)"
@@ -337,11 +339,11 @@
         <div class="xl:col-span-4">
           <img
             class="h-8 lg:h-12 text-white"
-            src="~/assets/images/footer-logo.svg"
+            :src="`https://hayotildizi.uz${footer.logo}`"
             alt="Hayot Ildizi"
           />
           <p class="text-white/50 font-light mt-3 text-sm lg:text-base">
-            {{ $t("footer-text") }}
+            {{ footer.text }}
           </p>
           <div class="flex mt-4 items-center space-x-3">
             <img
@@ -350,9 +352,9 @@
               alt="phone-icon"
             />
             <nuxt-link
-              to="tel:+998(71) 230 33 99"
+              :to="`tel:${footer.phone_number}`"
               class="text-success lg:text-[21px] font-medium"
-              >+998(71) 230 33 99</nuxt-link
+              >{{ footer.phone_number }}</nuxt-link
             >
           </div>
         </div>
@@ -398,9 +400,9 @@
                 src="~/assets/images/instagram.svg"
                 alt="instagram-icon"
               />
-              <nuxt-link to="https://www.instagram.com/hayotildizi" class="text-[#FFFFFFD9]"
-                >@hayotildizi</nuxt-link
-              >
+              <nuxt-link :to="footer.instagram" class="text-[#FFFFFFD9]">{{
+                footer.instagram_text
+              }}</nuxt-link>
             </div>
             <div class="flex items-center space-x-2 lg:justify-center">
               <img
@@ -408,9 +410,9 @@
                 src="~/assets/images/facebook.svg"
                 alt="facebook-icon"
               />
-              <nuxt-link to="https://www.facebook.com/hayotildizi/" class="text-[#FFFFFFD9]"
-                >@hayotildizi</nuxt-link
-              >
+              <nuxt-link :to="footer.facebook" class="text-[#FFFFFFD9]">{{
+                footer.facebook_text
+              }}</nuxt-link>
             </div>
             <div class="flex items-center space-x-2 lg:justify-end">
               <img
@@ -418,9 +420,9 @@
                 src="~/assets/images/telegram.svg"
                 alt="telegram-icon"
               />
-              <nuxt-link to="https://t.me/hayotildizi" class="text-[#FFFFFFD9]"
-                >@hayotildizi</nuxt-link
-              >
+              <nuxt-link :to="footer.telegram" class="text-[#FFFFFFD9]">{{
+                footer.telegram_text
+              }}</nuxt-link>
             </div>
             <div class="flex items-center space-x-2">
               <img
@@ -428,16 +430,16 @@
                 src="~/assets/images/youtube.svg"
                 alt="youtube-icon"
               />
-              <nuxt-link to="https://www.youtube.com/@user-tc3xo2ih5e" class="text-[#FFFFFFD9]"
-                >@hayotildizi</nuxt-link
-              >
+              <nuxt-link :to="footer.youtube" class="text-[#FFFFFFD9]">{{
+                footer.youtube_text
+              }}</nuxt-link>
             </div>
           </div>
         </div>
       </div>
       <div class="mt-7 border-t border-[#FFFFFF1F] pt-4">
         <p class="text-[#FFFFFFBF] text-center text-xs lg:text-base">
-          {{ $t("copy-right") }}
+          {{ footer.copyright_text }}
         </p>
       </div>
     </div>
@@ -477,4 +479,6 @@ const locales = [
 const activeLocale = computed(() => {
   return locales.find((l) => l.code === locale.value);
 });
+
+const footer = api("/footer/").data;
 </script>
