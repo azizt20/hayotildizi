@@ -83,6 +83,7 @@
                 <div class="flex items-center space-x-1">
                   <img
                     :src="`https://hatscripts.github.io/circle-flags/flags/${activeLocale.alpha2}.svg`"
+                    :alt="activeLocale.alpha2"
                     class="rounded-full size-4"
                   />
                   <span class="text-sm 3xl:text-base">
@@ -124,6 +125,7 @@
                     >
                       <img
                         :src="`https://hatscripts.github.io/circle-flags/flags/${lang.alpha2}.svg`"
+                        :alt="lang.alpha2"
                         class="rounded-full size-4"
                       />
                       <span class="ml-2">
@@ -264,6 +266,7 @@
                 <div class="flex items-center space-x-1">
                   <img
                     :src="`https://hatscripts.github.io/circle-flags/flags/${locale}.svg`"
+                    :alt="locale"
                     class="rounded-full size-4"
                   />
                   <span v-if="locale == 'uz'">O'zb</span>
@@ -304,6 +307,7 @@
                     >
                       <img
                         :src="`https://hatscripts.github.io/circle-flags/flags/${lang.alpha2}.svg`"
+                        :alt="lang.alpha2"
                         class="rounded-full size-4"
                       />
                       <span class="ml-2">

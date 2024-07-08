@@ -10,7 +10,7 @@
       <div class="flex items-start justify-between space-x-2">
         <span class="text-base lg:text-xl font-bold text-primary">{{ blog.title }}</span>
 
-        <nuxt-link :to="`/${locale}/blogs/${blog.id}`">
+        <nuxt-link :to="`/${locale}/blogs/${blog.id}`" aria-label="Read more">
           <svg
             width="13"
             height="13"

@@ -16,16 +16,19 @@
           :src="banner.products_image"
           alt="products"
           class="w-[55%] lg:w-[45%] absolute right-[9px] lg:right-10 bottom-[11px] lg:bottom-[34px]"
+          loading="lazy"
         />
         <img
           src="~/assets/images/certificates.png"
           alt="banner"
           class="absolute lg:left-1/2 top-[9px] right-[17px] lg:right-auto lg:top-5 lg:-translate-x-1/2 w-[100px] lg:w-auto"
+          loading="lazy"
         />
         <img
           src="~/assets/images/logo.svg"
           alt="logo"
           class="absolute left-[17px] lg:left-[6.7%] top-3 lg:top-9 w-[110px] lg:w-[270px]"
+          loading="lazy"
         />
         <p
           class="absolute left-[17px] lg:left-[6.7%] top-1/3 lg:top-[40%] max-w-[137px] lg:max-w-[340px] font-light text-xs lg:text-lg 3xl:text-[21px] lg:leading-[27px] 3xl:leading-[31.18px]"
@@ -67,11 +70,11 @@
         >
           Hayot ildizi
         </p>
-        <h4
+        <p
           class="font-bold text-2xl lg:text-[52px] lg:leading-[73.5px] text-[#323638]"
         >
           {{ products[0]?.title }}
-        </h4>
+        </p>
         <p
           class="text-light text-xs lg:text-[19px] leading-1 lg:leading-[22.8px] text-[#464646]"
         >
@@ -126,6 +129,7 @@
               class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 max-h-[312px] lg:max-h-[525px]"
               :src="products[0].image"
               :alt="products[0].title"
+              loading="lazy"
             />
           </div>
           <div
@@ -192,6 +196,7 @@
               class="absolute left-1/2 top-1/2 -translate-x-[35%] -translate-y-1/2 max-h-[312px] lg:max-h-[525px]"
               :src="products[1].image"
               :alt="products[1].title"
+              loading="lazy"
             />
           </div>
           <div
@@ -244,11 +249,11 @@
         >
           Hayot ildizi
         </p>
-        <h4
+        <p
           class="font-bold text-2xl lg:text-[52px] lg:leading-[73.5px] text-[#323638]"
         >
           {{ products[1]?.title }}
-        </h4>
+        </p>
         <p
           class="text-light text-xs lg:text-[19px] leading-1 lg:leading-[22.8px] text-[#464646]"
         >
@@ -434,9 +439,15 @@
         :key="certificate.id"
         class="relative"
       >
-        <img :src="certificate.image" alt="certificate" class="w-full" />
+        <img
+          :src="certificate.image"
+          alt="certificate"
+          class="w-full"
+          loading="lazy"
+        />
       </swiper-slide>
       <button
+        aria-label="previous"
         class="button-prev absolute z-10 left-1 top-1/2 -translate-y-1/2 rounded-full bg-white size-12 flex items-center justify-center disabled:border-[#999999] group"
       >
         <svg
@@ -456,6 +467,7 @@
         </svg>
       </button>
       <button
+        aria-label="next"
         class="button-next absolute z-10 right-1 top-1/2 -translate-y-1/2 rounded-full bg-white size-12 flex items-center justify-center disabled:border-[#999999] group"
       >
         <svg
@@ -498,6 +510,15 @@ const reviews = api("/reviews/").data;
 const certificates = api("/certificates/").data;
 
 const localePath = useLocalePath();
+
+useSeoMeta({
+  title: "Hayot Ildizi | Jenshen ekstrakti va Spirulina",
+  ogTitle: "Hayot Ildizi | Jenshen ekstrakti va Spirulina",
+  description:
+    "🌿 Go'zallik va salomatlik bir flakonda! Spirulina va Ginseng Extract. 🚛 Bepul yetkazish xizmati.",
+  ogDescription:
+    "🌿 Go'zallik va salomatlik bir flakonda! Spirulina va Ginseng Extract. 🚛 Bepul yetkazish xizmati.",
+});
 </script>
 
 <style scoped>

@@ -18,4 +18,13 @@
 <script setup>
 const route = useRoute();
 const illness = api(`/illnesses/${route.params.id}/`).data;
+
+useSeoMeta({
+  title: `Hayot Ildizi | ${illness?.value?.title}`,
+  ogTitle: `Hayot Ildizi | ${illness?.value?.title}`,
+  description:
+    "🌿 Go'zallik va salomatlik bir flakonda! Spirulina va Ginseng Extract. 🚛 Bepul yetkazish xizmati.",
+  ogDescription:
+    "🌿 Go'zallik va salomatlik bir flakonda! Spirulina va Ginseng Extract. 🚛 Bepul yetkazish xizmati.",
+});
 </script>
