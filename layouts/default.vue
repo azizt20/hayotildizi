@@ -350,9 +350,9 @@
               alt="phone-icon"
             />
             <nuxt-link
-              to="tel:+998(71) 123 45 67"
+              to="tel:+998(71) 230 33 99"
               class="text-success lg:text-[21px] font-medium"
-              >+998(71) 123 45 67</nuxt-link
+              >+998(71) 230 33 99</nuxt-link
             >
           </div>
         </div>
@@ -398,7 +398,7 @@
                 src="~/assets/images/instagram.svg"
                 alt="instagram-icon"
               />
-              <nuxt-link to="https://instagram.com" class="text-[#FFFFFFD9]"
+              <nuxt-link to="https://www.instagram.com/hayotildizi" class="text-[#FFFFFFD9]"
                 >@hayotildizi</nuxt-link
               >
             </div>
@@ -408,7 +408,7 @@
                 src="~/assets/images/facebook.svg"
                 alt="facebook-icon"
               />
-              <nuxt-link to="https://facebook.com" class="text-[#FFFFFFD9]"
+              <nuxt-link to="https://www.facebook.com/hayotildizi/" class="text-[#FFFFFFD9]"
                 >@hayotildizi</nuxt-link
               >
             </div>
@@ -418,7 +418,7 @@
                 src="~/assets/images/telegram.svg"
                 alt="telegram-icon"
               />
-              <nuxt-link to="https://t.me" class="text-[#FFFFFFD9]"
+              <nuxt-link to="https://t.me/hayotildizi" class="text-[#FFFFFFD9]"
                 >@hayotildizi</nuxt-link
               >
             </div>
@@ -428,7 +428,7 @@
                 src="~/assets/images/youtube.svg"
                 alt="youtube-icon"
               />
-              <nuxt-link to="https://youtube.com" class="text-[#FFFFFFD9]"
+              <nuxt-link to="https://www.youtube.com/@user-tc3xo2ih5e" class="text-[#FFFFFFD9]"
                 >@hayotildizi</nuxt-link
               >
             </div>
