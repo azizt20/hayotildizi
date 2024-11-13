@@ -1,0 +1,27 @@
+name: Deploy CD
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  deploy:
+
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 4
+
+    steps:
+    - name: Restart pm2
+      uses: appleboy/ssh-action@master
+      with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.HOST_USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: 22
+          script: |
+            cd /opt/hayotildizi
+            git pull
+            npm i
+            npm run build
+            PORT=3003 forever restart .output/server/index.mjs
