@@ -2,19 +2,30 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
+  app: {
+    head: {
+      meta: [
+        {
+          name: "google-site-verification",
+          content: "h5v7s3o0jVCOJGloIF3lBs6AWBkMjmi_kU8IXTsPQ4U",
+        },
+      ],
+    },
+  },
+
   runtimeConfig: {
     public: {
       baseURL: process.env.BASE_URL,
-    }
+    },
   },
 
-  css: ['~/assets/css/main.css'],
+  css: ["~/assets/css/main.css"],
 
   postcss: {
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
-    }
+    },
   },
   modules: ["@nuxtjs/i18n"],
   i18n: {
@@ -31,5 +42,5 @@ export default defineNuxtConfig({
       { code: "tk", iso: "tk-TM", file: "tk.json" },
       { code: "tg", iso: "tg-TJ", file: "tg.json" },
     ],
-  }
-})
+  },
+});
