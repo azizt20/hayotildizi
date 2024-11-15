@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://hayotildizi.nt-technosoft.uz/sitemap.xml
